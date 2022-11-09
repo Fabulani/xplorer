@@ -24,10 +24,20 @@ https://sourceforge.net/projects/vcxsrv/
 
 3. Get your local IP from `ipconfig` (eg. 192.168.100.2).
 
-4. Open `.env` file and edit the following environment variable definitions:
-   - `IP`: your local IP from ipconfig.
-   - `WORKDIR`: your working directory, i.e. where these files are.
-   - **Note:** `WORKDIR` might be unnecessary.
+4. Create and open `environment.env` file. Copy this template and edit `IP` (your local IP from ipconfig) and `WORKDIR` (your working directory, i.e. where these files are). **Note:** `WORKDIR` might be unnecessary.
+
+```txt
+IP=192.168.229.233
+WORSKSPACES_DIR=C:/Users/fabia/Documents/_imlex/uef/RXR/xplorer
+DISPLAY=${IP}:0.0
+
+ROS_DOMAIN_ID=21
+TURTLEBOT3_MODEL=waffle
+
+COMPOSE_DOCKER_CLI_BUILD=0
+```
+
+For example: `IP=192.168.229.269` and `WORSKSPACES_DIR=C:/Users/fabia/Documents/_imlex/uef/RXR/xplorer`.
 
 ### Linux
 
