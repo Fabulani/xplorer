@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  turtlesim:
+    container_name: turtlesim
+    image: osrf/ros:galactic-desktop
+    command: ros2 run turtlesim turtlesim_node
+    privileged: true
+    env_file:
+    - environment.env
+    volumes:
+      - myros2volume:/workspaces
+    networks:
+      - host
+
+  # turtleop:
+  #   container_name: teleop_turtle
+  #   image: osrf/ros:galactic-desktop
+  #   command: ros2 run turtlesim turtle_teleop_key
+  #   privileged: true
+  #   depends_on:
+  #     - turtlesim
+  #   env_file:
+  #     - environment.env
+  #   volumes:
+  #     - myros2volume:/workspaces
+  #   networks:
+  #     - host
+
+volumes:
+  myros2volume:
+networks:
+  host:
