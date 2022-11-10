@@ -3,17 +3,15 @@ version: '2'
 services:
   turtlesim:
     container_name: turtlesim
-    image: osrf/ros:galactic-desktop
+    build: .
     command: ros2 run turtlesim turtlesim_node
-    privileged: true
+    privileged: true  # Req. for GUI applications in Docker
     env_file:
       - environment.env
     volumes:
       - myros2volume:/workspaces
-    networks:
-      - host
+    network_mode: host # Req. for connecting to the same network as the robot
+    ipc: host
 
 volumes:
   myros2volume:
-networks:
-  host:

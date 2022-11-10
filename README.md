@@ -41,7 +41,15 @@ For example: `IP=192.168.229.269` and `WORSKSPACES_DIR=C:/Users/fabia/Documents/
 
 ### Linux
 
-(to be written)
+DOC NVIDIA STUFF
+
+Run the following command:
+
+```bash
+xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
+```
+
+**NOTE: replace ros_entrypoint.sh to include the bash commands to automatically do this on new terminals. Also, set env variables in the docker-compose file.** 
 
 ## Running turtlesim
 
