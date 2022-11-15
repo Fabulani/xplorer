@@ -41,7 +41,13 @@ For example: `IP=192.168.229.269` and `WORSKSPACES_DIR=C:/Users/fabia/Documents/
 
 ### Linux
 
-DOC NVIDIA STUFF
+To run Docker without `sudo`:
+
+```bash
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+```
 
 Run the following command:
 
@@ -51,9 +57,41 @@ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
 
 **IMPORTANT:** This command is required on every reboot.
 
+Next, create the `environment.env` file in this directory with the following contents:
+
+```txt
+DISPLAY=:0
+
+ROS_DISTRO=galactic
+ROS_DOMAIN_ID=1
+TURTLEBOT3_MODEL=waffle
+
+COMPOSE_DOCKER_CLI_BUILD=0
+```
+
+To check if the `DISPLAY` environment variable is correct, open the terminal and run
+
+```bash
+echo $DISPLAY
+```
+
+Write the result to `DISPLAY` in `environment.env` (normally, it's either `:0` or `:1`). Now you're ready to run the project!
+
+**Note:** If the project still doesn't work, you might need to install [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit), then run the following:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+```
+
 ## Running turtlesim
 
-If on Windows, open XLaunch (X server) and configure it like previously.
+If on **Windows**, open XLaunch (X server) and configure it like previously. If on **Linux**, remember to run 
+```bash
+xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
+```
+on every reboot.
 
 To run a `turtlesim` simulation, run the following command:
 
@@ -73,13 +111,7 @@ To get `turtlesim turtle_teleop_key` to work, open a new terminal and `exec` int
 docker exec -it turtlesim bash
 ```
 
-Source ROS with (don't forget the dot!):
-
-```bash
-. ros_entrypoint.sh
-```
-
-Finally, run the teleop package with:
+Run the teleop package with:
 
 ```bash
 ros2 run turtlesim turtle_teleop_key
@@ -95,3 +127,8 @@ Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rot
 'Q' to quit.
 ```
 
+**IMPORTANT:** if you get the `ros2 not found` error, ROS2 wasn't sourced automatically. To fix this, you have to run the following:
+
+```bash
+. ros_entrypoint.sh
+```
