@@ -10,4 +10,6 @@ COPY ros_entrypoint.sh /ros_entrypoint.sh
 #? How to set it automatically in the Dockerfile?
 # Add this for every new line: && \
 # echo '. <YOUR_WORKSPACE_PATH>/install/setup.bash' >> ~/.bashrc`
-RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc
+RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrcç
+
+RUN ["chmod", "+x", "/ros_entrypoint.sh"]

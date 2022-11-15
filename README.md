@@ -49,11 +49,13 @@ Run the following command:
 xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
 ```
 
-**NOTE: replace ros_entrypoint.sh to include the bash commands to automatically do this on new terminals. Also, set env variables in the docker-compose file.** 
+**IMPORTANT:** This command is required on every reboot.
 
 ## Running turtlesim
 
-To run a `turltesim` simulation, run the following command:
+If on Windows, open XLaunch (X server) and configure it like previously.
+
+To run a `turtlesim` simulation, run the following command:
 
 ```bash
 docker-compose up
