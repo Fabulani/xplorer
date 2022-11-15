@@ -1,0 +1,6 @@
+# service input
+bool start
+---
+# service output
+bool success
+string status
