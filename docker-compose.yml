@@ -5,13 +5,21 @@ services:
     container_name: turtlesim
     build: .
     command: ros2 run turtlesim turtlesim_node
-    privileged: true  # Req. for GUI applications in Docker
+    privileged: true # Req. for GUI applications in Docker
     env_file:
       - environment.env
     volumes:
       - myros2volume:/workspaces
     network_mode: host # Req. for connecting to the same network as the robot
     ipc: host
+  rosbridge:
+    container_name: rosbridge
+    build: .
+    command: ros2 launch rosbridge_server rosbridge_websocket.launch
+    env_file:
+      - environment.env
+    volumes:
+      - myros2volume:/workspaces
 
 volumes:
   myros2volume:
