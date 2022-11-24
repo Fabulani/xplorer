@@ -1,21 +1,33 @@
 version: '2'
 
 services:
-  turtlesim:
-    container_name: turtlesim
+  # turtlesim:
+  #   container_name: turtlesim
+  #   build: .
+  #   command: ros2 run turtlesim turtlesim_node
+  #   privileged: true # Req. for GUI applications in Docker
+  #   env_file:
+  #     - environment.env
+  #   volumes:
+  #     - myros2volume:/workspaces
+  #   network_mode: host # Req. for connecting to the same network as the robot
+  #   ipc: host
+
+  rosbridge:
+    container_name: rosbridge
     build: .
-    command: ros2 run turtlesim turtlesim_node
-    privileged: true # Req. for GUI applications in Docker
+    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
     env_file:
       - environment.env
     volumes:
       - myros2volume:/workspaces
-    network_mode: host # Req. for connecting to the same network as the robot
-    ipc: host
-  rosbridge:
-    container_name: rosbridge
+    ports:
+      - "127.0.0.1:9090:9090"
+
+  explore:
+    container_name: explore
     build: .
-    command: ros2 launch rosbridge_server rosbridge_websocket.launch
+    command: ros2 launch explore_lite explore.launch.py
     env_file:
       - environment.env
     volumes:

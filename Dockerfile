@@ -2,13 +2,21 @@ FROM osrf/ros:galactic-desktop
 
 ENV ROS_DISTRO=galactic
 
-WORKDIR /
-
+# Update apt so that new packages can be installed properly
 RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*rm 
 
+# Install rosbridge
 RUN sudo apt-get install ros-galactic-rosbridge-suite -y
+
+# Copy and build ROS2 packages inside the workspace
+RUN mkdir /xplorer_ws/src -p && \
+    cd /xplorer_ws/src && \
+    git clone https://github.com/robo-friends/m-explore-ros2.git main && \
+    . /opt/ros/$ROS_DISTRO/setup.sh && \
+    rosdep install --from-paths . --ignore-src -r -y && \
+    colcon build
 
 # Replace ros_entrypoint.sh
 COPY ros_entrypoint.sh /ros_entrypoint.sh
@@ -17,7 +25,8 @@ COPY ros_entrypoint.sh /ros_entrypoint.sh
 # The YOUR_WORKSPACE_PATH is the absolute path to the workspace.
 #? How to set it automatically in the Dockerfile?
 # Add this for every new line: && \
-# echo '. <YOUR_WORKSPACE_PATH>/install/setup.bash' >> ~/.bashrc`
+# echo '. <YOUR_WORKSPACE_PATH>/install/setup.bash' >> ~/.bashrc
 RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc
+# echo '. /xplorer_ws/install/setup.sh' >> ~/.bashrc
 
 RUN ["chmod", "+x", "/ros_entrypoint.sh"]

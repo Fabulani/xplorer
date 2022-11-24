@@ -132,3 +132,15 @@ Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rot
 ```bash
 . ros_entrypoint.sh
 ```
+
+## Rosbridge Server
+
+Source: https://foxglove.dev/blog/using-rosbridge-with-ros2
+
+The rosbridge server node is launched with the `docker-compose up` command. It'll create a websocket on `localhost:9090`. To test if it's working, open `rosbridge-test.html` and check if the connection is *successful*. Then, publish a message to the ros topic `/my_topic` with:
+
+```bash
+ros2 topic pub /my_topic std_msgs/String "data: Hello world!" -1
+```
+
+The message should show up in the html page.
