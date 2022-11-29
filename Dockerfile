@@ -12,8 +12,8 @@ RUN sudo apt-get install ros-galactic-rosbridge-suite -y
 
 # Copy and build ROS2 packages inside the workspace
 RUN mkdir /xplorer_ws/src -p && \
-    cd /xplorer_ws/src && \
-    git clone https://github.com/robo-friends/m-explore-ros2.git main && \
+    cd /xplorer_ws && \
+    git clone https://github.com/robo-friends/m-explore-ros2.git src/m-explore-ros2 --branch main && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
     rosdep install --from-paths . --ignore-src -r -y && \
     colcon build
@@ -26,7 +26,7 @@ COPY ros_entrypoint.sh /ros_entrypoint.sh
 #? How to set it automatically in the Dockerfile?
 # Add this for every new line: && \
 # echo '. <YOUR_WORKSPACE_PATH>/install/setup.bash' >> ~/.bashrc
-RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc
-# echo '. /xplorer_ws/install/setup.sh' >> ~/.bashrc
+RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc && \
+    echo '. /xplorer_ws/install/setup.bash' >> ~/.bashrc
 
 RUN ["chmod", "+x", "/ros_entrypoint.sh"]
