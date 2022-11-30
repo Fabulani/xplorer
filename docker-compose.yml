@@ -13,16 +13,16 @@ services:
   #   network_mode: host # Req. for connecting to the same network as the robot
   #   ipc: host
 
-  rosbridge:
-    container_name: rosbridge
-    build: .
-    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
-    env_file:
-      - environment.env
-    volumes:
-      - myros2volume:/workspaces
-    ports:
-      - "127.0.0.1:9090:9090"
+  # rosbridge:
+  #   container_name: rosbridge
+  #   build: .
+  #   command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+  #   env_file:
+  #     - environment.env
+  #   volumes:
+  #     - myros2volume:/workspaces
+  #   ports:
+  #     - "127.0.0.1:9090:9090"
 
   explore:
     container_name: explore
@@ -36,13 +36,14 @@ services:
   rostcp:
     container_name: rostcp
     build: .
-    command: ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=127.0.0.1 -p ROS_TCP_PORT:=10000
+    command: ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
     env_file:
       - environment.env
     volumes:
       - myros2volume:/workspaces
     ports:
-      - "127.0.0.1:10000:10000"
+      - "10000:10000"
+      - "5005:5005"
 
 volumes:
   myros2volume:
