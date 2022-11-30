@@ -33,5 +33,16 @@ services:
     volumes:
       - myros2volume:/workspaces
 
+  rostcp:
+    container_name: rostcp
+    build: .
+    command: ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=127.0.0.1 -p ROS_TCP_PORT:=10000
+    env_file:
+      - environment.env
+    volumes:
+      - myros2volume:/workspaces
+    ports:
+      - "127.0.0.1:10000:10000"
+
 volumes:
   myros2volume:
