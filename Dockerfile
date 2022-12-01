@@ -11,8 +11,11 @@ RUN apt-get update && apt-get install -y dos2unix \
 RUN sudo apt-get install ros-galactic-rosbridge-suite -y
 
 # Copy and build ROS2 packages inside the workspace
-RUN mkdir /xplorer_ws/src -p && \
-    cd /xplorer_ws && \
+#TODO: instead of COPY, clone https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros_unity_integration/ros2_packages
+#! This might not be necessary, since we have the navigation package for Unity
+RUN mkdir /xplorer_ws/src -p
+COPY xplorer_ws/src xplorer_ws/src
+RUN cd /xplorer_ws && \
     git clone https://github.com/robo-friends/m-explore-ros2.git src/m-explore-ros2 --branch main && \
     git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git src/ROS-TCP-Endpoint --branch main-ros2 && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
