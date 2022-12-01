@@ -33,5 +33,15 @@ services:
     volumes:
       - myros2volume:/workspaces
 
+  gazebo:
+    container_name: gazebo
+    build: .
+    command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
+    privileged: true
+    env_file:
+      - environment.env
+    volumes:
+      - myros2volume:/workspaces
+
 volumes:
   myros2volume:
