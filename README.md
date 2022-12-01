@@ -15,9 +15,9 @@
 # Requirements
 
 To fully run the project, the following is required:
-- Docker (including docker-compose): recommended to install Docker Desktop
-- (Windows, required for turtlebot3 gazebo simulation) VcXsrv Windows X Server: https://sourceforge.net/projects/vcxsrv/
-- Unity 2020+
+- Docker (and docker-compose): recommended to install Docker Desktop
+- (Windows) VcXsrv Windows X Server: https://sourceforge.net/projects/vcxsrv/ required for turtlebot3 gazebo simulation
+- Unity 2020+: for the Unity VR scene
 
 
 # First-time setup
