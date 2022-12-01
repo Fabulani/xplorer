@@ -1,17 +1,30 @@
 # XploreR
 
-## Requirements
+- [XploreR](#xplorer)
+- [Requirements](#requirements)
+- [First-time setup](#first-time-setup)
+  - [Windows](#windows)
+  - [Linux](#linux)
+- [Docker with GUIs](#docker-with-guis)
+- [Running the project](#running-the-project)
+  - [Detached mode](#detached-mode)
+  - [Opening a new terminal inside a container](#opening-a-new-terminal-inside-a-container)
+- [Unity](#unity)
 
-To run the project as it was intended, the following is required:
+
+# Requirements
+
+To fully run the project, the following is required:
 - Docker (including docker-compose): recommended to install Docker Desktop
-- (Windows) VcXsrv Windows X Server: https://sourceforge.net/projects/vcxsrv/
+- (Windows, required for turtlebot3 gazebo simulation) VcXsrv Windows X Server: https://sourceforge.net/projects/vcxsrv/
+- Unity 2020+
 
 
-## First-time setup
+# First-time setup
 
-For `turtlesim` and similar GUI ROS packages to work with Docker, the following steps are necessary. Follow whichever fits your OS.
+For `turtlebot3_gazebo` and similar GUI ROS packages to work with Docker, the following steps are necessary. Follow whichever fits your OS.
 
-### Windows
+## Windows
 
 1. Download and install VcXsrv Windows X Server: 
 https://sourceforge.net/projects/vcxsrv/
@@ -22,24 +35,26 @@ https://sourceforge.net/projects/vcxsrv/
     - Select `Disable access control`.
     - **Note:** sometimes when running simulations XLaunch might get buggy, so you have to kill the whole process and start it again.
 
-3. Get your local IP from `ipconfig` (eg. 192.168.100.2).
+3. Get your local IP from `ipconfig`.
+   - **Note:** this can be done by pressing the Windows key, typing `cmd`, selecting the `Command Prompt` app, then typing `ipconfig`. Search for a line like this:
+    `IPv4 Address. . . . . . . . . . . : 10.143.144.69`
 
-4. Create and open `environment.env` file. Copy this template and edit `IP` (your local IP from ipconfig) and `WORKDIR` (your working directory, i.e. where these files are). **Note:** `WORKDIR` might be unnecessary.
+4. Open the `environment.env` file and paste your IP in the `DISPLAY` variable before `:0`, like so: `DISPLAY=10.143.144.69:0`. Your `environment.env` file should look like this:
 
 ```txt
-IP=192.168.229.233
-WORSKSPACES_DIR=C:/Users/fabia/Documents/_imlex/uef/RXR/xplorer
-DISPLAY=${IP}:0.0
+DISPLAY=10.143.144.69:0
 
-ROS_DOMAIN_ID=21
+ROS_DISTRO=galactic
+ROS_DOMAIN_ID=1
 TURTLEBOT3_MODEL=waffle
+GAZEBO_MODEL_PATH=/opt/ros/galactic/share/turtlebot3_gazebo/models
 
 COMPOSE_DOCKER_CLI_BUILD=0
 ```
 
-For example: `IP=192.168.229.269` and `WORSKSPACES_DIR=C:/Users/fabia/Documents/_imlex/uef/RXR/xplorer`.
+**IMPORTANT:** you'll need to update your IP every time it changes!
 
-### Linux
+## Linux
 
 To run Docker without `sudo`:
 
@@ -52,30 +67,18 @@ newgrp docker
 Run the following command:
 
 ```bash
-xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
+xhost +local:`docker inspect --format='{{ .Config.Hostname }}' gazebo`
 ```
 
 **IMPORTANT:** This command is required on every reboot.
 
-Next, create the `environment.env` file in this directory with the following contents:
-
-```txt
-DISPLAY=:0
-
-ROS_DISTRO=galactic
-ROS_DOMAIN_ID=1
-TURTLEBOT3_MODEL=waffle
-
-COMPOSE_DOCKER_CLI_BUILD=0
-```
-
-To check if the `DISPLAY` environment variable is correct, open the terminal and run
+In the `environment.env` file, check if `DISPLAY` is correct by opening a terminal and running:
 
 ```bash
 echo $DISPLAY
 ```
 
-Write the result to `DISPLAY` in `environment.env` (normally, it's either `:0` or `:1`). Now you're ready to run the project!
+Write the result to `DISPLAY` (normally, it's either `:0` or `:1`). Now you're ready to run the project!
 
 **Note:** If the project still doesn't work, you might need to install [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit), then run the following:
 
@@ -85,62 +88,62 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 ```
 
-## Running turtlesim
+# Docker with GUIs
 
-If on **Windows**, open XLaunch (X server) and configure it like previously. If on **Linux**, remember to run 
-```bash
-xhost +local:`docker inspect --format='{{ .Config.Hostname }}' turtlesim`
-```
-on every reboot.
+If you've done the first-time setup, remember to do the following on every system reboot:
 
-To run a `turtlesim` simulation, run the following command:
+- If on **Windows**, open XLaunch (X server) and configure it like previously. Update your IP in the `environment.env` file.
+- If on **Linux**, remember to run 
+    ```bash
+    xhost +local:`docker inspect --format='{{ .Config.Hostname }}' gazebo`
+    ```
+    on every reboot.
+
+# Running the project
+
+Spin-up the containers with:
 
 ```bash
 docker-compose up
 ```
 
-You should see something like:
+If this is your first time here, it might take a couple minutes to build the image. Once it's done, you should see `explore`, `gazebo`, and `rostcp` containers up and their messages.
+
+To shutdown, use `CTRL+C` in the terminal running the containers.
+
+## Detached mode
+
+Alternatively, you can run the containers in detached mode:
 
 ```bash
-turtlesim    | [INFO] [1667985097.122394400] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+docker-compose up -d
 ```
 
-To get `turtlesim turtle_teleop_key` to work, open a new terminal and `exec` into the `turtlesim` container:
+This will leave the terminal free while the containers run in the background. To shutdown, run the following:
 
 ```bash
-docker exec -it turtlesim bash
+docker-compose down
 ```
 
-Run the teleop package with:
+## Opening a new terminal inside a container
+
+You can `docker exec` into any of the containers and run `ros2` commands from the get-go (sourcing is done automatically). For example, going into the `explore` container:
 
 ```bash
-ros2 run turtlesim turtle_teleop_key
+docker exec -it explore bash
 ```
 
-You should see something like this:
+#  Unity
 
-```bash
-Reading from keyboard
----------------------------
-Use arrow keys to move the turtle.
-Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
-'Q' to quit.
-```
+This project is designed to communicate with a Unity scene running the `ROS-TCP Connector` and `Unity Robotics Visualizations` packages. This is achieved via the `rostcp` container running the `ROS-TCP-Endpoint` package from the `main-ros2` branch. All of this is based on the tutorials provided by Unity on Github:
 
-**IMPORTANT:** if you get the `ros2 not found` error, ROS2 wasn't sourced automatically. To fix this, you have to run the following:
+- [Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros_unity_integration](https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros_unity_integration)
+- [Unity-Technologies/Robotics-Nav2-SLAM-Example](https://github.com/Unity-Technologies/Robotics-Nav2-SLAM-Example)
 
-```bash
-. ros_entrypoint.sh
-```
+To replicate this, follow the `ros_unity_integration` tutorial first.
 
-## Rosbridge Server
+Furthermore, we used a VR scene to visualize data from the robot. The following headsets were tested:
+- Samsung Odyssey with HMD Odyssey controllers (WMR)
+- Pimax 8KX with both Index, Sword, and Vive controllers (SteamVR)
 
-Source: https://foxglove.dev/blog/using-rosbridge-with-ros2
-
-The rosbridge server node is launched with the `docker-compose up` command. It'll create a websocket on `localhost:9090`. To test if it's working, open `rosbridge-test.html` and check if the connection is *successful*. Then, publish a message to the ros topic `/my_topic` with:
-
-```bash
-ros2 topic pub /my_topic std_msgs/String "data: Hello world!" -1
-```
-
-The message should show up in the html page.
+Made with Unity editor version `2021.3.14f1`.
