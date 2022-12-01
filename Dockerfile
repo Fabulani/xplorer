@@ -1,14 +1,23 @@
 FROM osrf/ros:galactic-desktop
 
+# ROS distribution
 ENV ROS_DISTRO=galactic
 
-# Update apt so that new packages can be installed properly. Install dos2unix.
-RUN apt-get update && apt-get install -y dos2unix \
+# Update apt so that new packages can be installed properly. wget for gazebo, dos2unix for line endings fix
+RUN apt-get update && apt-get install -y wget dos2unix \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*rm 
 
-# Install rosbridge
-RUN sudo apt-get install ros-galactic-rosbridge-suite -y
+# Install ROS2-galactic packages
+RUN sudo apt-get install ros-galactic-rosbridge-suite -y \
+    && sudo apt-get install ros-galactic-turtlebot3* -y \
+    && sudo apt-get install ros-galactic-navigation2 -y \
+    && sudo apt-get install ros-galactic-nav2-bringup -y
+
+# Install gazebo
+RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list' \
+    && wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add - \
+    && apt-get update -y && apt-get install -y gazebo11 libgazebo11-dev
 
 # Copy and build ROS2 packages inside the workspace
 #TODO: instead of COPY, clone https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros_unity_integration/ros2_packages
@@ -26,14 +35,11 @@ RUN cd /xplorer_ws && \
 COPY ros_entrypoint.sh /ros_entrypoint.sh
 
 # Sources ROS on every new terminal automatically
-# The YOUR_WORKSPACE_PATH is the absolute path to the workspace.
-#? How to set it automatically in the Dockerfile?
-# Add this for every new line: && \
-# echo '. <YOUR_WORKSPACE_PATH>/install/setup.bash' >> ~/.bashrc
 RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc && \
     echo '. /xplorer_ws/install/setup.bash' >> ~/.bashrc
 
-# Use dos2unix to convert the line endings, then remove dos2unix and clean up files created by apt-get
-RUN dos2unix /ros_entrypoint.sh && apt-get --purge remove -y dos2unix && rm -rf /var/lib/apt/lists/*
+# Use dos2unix to convert the line endings, remove dos2unix and wget, then clean up files created by apt-get
+RUN dos2unix /ros_entrypoint.sh && apt-get --purge remove -y dos2unix wget && rm -rf /var/lib/apt/lists/*
 
+# Required in Linux systems. Gives proper permissions to entrypoint file.
 RUN ["chmod", "+x", "/ros_entrypoint.sh"]
