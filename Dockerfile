@@ -25,7 +25,7 @@ RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb
 RUN mkdir /xplorer_ws/src -p
 COPY xplorer_ws/src xplorer_ws/src
 RUN cd /xplorer_ws && \
-    git clone https://github.com/robo-friends/m-explore-ros2.git src/m-explore-ros2 --branch main && \
+    git clone https://github.com/shani1610/m-explore-ros2.git src/m-explore-ros2 --branch main && \
     git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git src/ROS-TCP-Endpoint --branch main-ros2 && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
     rosdep install --from-paths . --ignore-src -r -y && \
