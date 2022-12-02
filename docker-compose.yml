@@ -1,4 +1,4 @@
-version: '2'
+version: '2.4'
 
 services:
   explore:
@@ -10,7 +10,6 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
-      - /tmp/.X11-unix:/tmp/.X11-unix
 
   rostcp:
     # ROS-Unity integration node
@@ -21,7 +20,6 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
-      - /tmp/.X11-unix:/tmp/.X11-unix
     ports:
       - "10000:10000"
       - "5005:5005"
@@ -37,6 +35,7 @@ services:
       volumes:
         - xplorervolume:/workspaces
         - /tmp/.X11-unix:/tmp/.X11-unix
+      runtime: nvidia
 
 volumes:
   xplorervolume: # Fixes Linux + Docker GUI problems
