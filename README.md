@@ -4,9 +4,9 @@
  __Autonomous Exploration with Virtual Reality Visualization__  
 This project is the result of eight weeks of work with the Karelics company, under the supervision of our robotic subject Professor Mr. Ilkka Jormanainen, University of Eastern Finalnd. The aim of this project was to build a fully autonomous exploration Robot, linked to a VR (Virtual Reality) environment that visualizes a map of the robot’s environment. 
 
- [Artemis Georgopoulo](https://tom94.net), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
+ [Artemis Georgopoulo](https://github.com/artemisge), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
 
-__[Project page](https://nvlabs.github.io/instant-ngp)&nbsp;/ [Project report](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf)&nbsp;/ [Video](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.mp4)&nbsp;/ [Presentation](https://tom94.net/data/publications/mueller22instant/mueller22instant-gtc.mp4)&nbsp;__
+__[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf)&nbsp;/ [Video](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.mp4)&nbsp;/ [Presentation](https://tom94.net/data/publications/mueller22instant/mueller22instant-gtc.mp4)&nbsp;__
 
 # Table of content
 
