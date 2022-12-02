@@ -1,5 +1,15 @@
 # XploreR
 
+
+ __Autonomous Exploration with Virtual Reality Visualization__  
+This project is the result of eight weeks of work with the Karelics company, under the supervision of our robotic subject Professor Mr. Ilkka Jormanainen, University of Eastern Finalnd. The aim of this project was to build a fully autonomous exploration Robot, linked to a VR (Virtual Reality) environment that visualizes a map of the robot’s environment. 
+
+ [Artemis Georgopoulo](https://tom94.net), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
+
+__[Project page](https://nvlabs.github.io/instant-ngp)&nbsp;/ [Project report](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf)&nbsp;/ [Video](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.mp4)&nbsp;/ [Presentation](https://tom94.net/data/publications/mueller22instant/mueller22instant-gtc.mp4)&nbsp;__
+
+# Table of content
+
 - [XploreR](#xplorer)
 - [Requirements](#requirements)
 - [First-time setup](#first-time-setup)
@@ -10,7 +20,7 @@
   - [Detached mode](#detached-mode)
   - [Opening a new terminal inside a container](#opening-a-new-terminal-inside-a-container)
 - [Unity](#unity)
-
+- [Thanks](#thanks)
 
 # Requirements
 
@@ -147,3 +157,12 @@ Furthermore, we used a VR scene to visualize data from the robot. The following 
 - Pimax 8KX with both Index, Sword, and Vive controllers (SteamVR)
 
 Made with Unity editor version `2021.3.14f1`.
+
+# Thanks
+
+We would like to sincerely express our appreciation to Karelics for the support they’ve sent our way working on this project.
+
+This project makes use of a number of open source libraries, including:
+* [m-explore-ros2](https://github.com/robo-friends/m-explore-ros2) for autonomous exploration on ROS2
+
+Many thanks to the authors!
