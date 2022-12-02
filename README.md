@@ -2,7 +2,7 @@
 
 
  __Autonomous Exploration with Virtual Reality Visualization__  
-This project is the result of eight weeks of work with the Karelics company, under the supervision of our robotic subject Professor Mr. Ilkka Jormanainen, University of Eastern Finalnd. The aim of this project was to build a fully autonomous exploration Robot, linked to a VR (Virtual Reality) environment that visualizes a map of the robot’s environment. 
+This project is the result of eight weeks of work with the Karelics company, under the supervision of our Robotics + XR subject Professor Mr. Ilkka Jormanainen, University of Eastern Finland. The aim of this project was to build integrate a autonomous exploration algorithm in a SLAM-equipped robot, and link it to a VR (Virtual Reality) environment that allows visualization of the robot’s published data (e.g., the map, pose, path, etc.). 
 
  [Artemis Georgopoulo](https://github.com/artemisge), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
 
