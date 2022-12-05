@@ -1,5 +1,17 @@
 FROM osrf/ros:galactic-desktop
 
+# UNIX username
+ENV USER=xplorer
+
+# Working directory
+ENV WORKDIR=/home/${USER}/src/
+
+# Add new user and create a home directory for him (attempt at fixing WSL2 lag)
+RUN useradd --create-home --shell /bin/bash ${USER}
+
+# Set working directory
+WORKDIR ${WORKDIR}
+
 # ROS distribution
 ENV ROS_DISTRO=galactic
 
@@ -20,11 +32,9 @@ RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb
     && apt-get update -y && apt-get install -y gazebo11 libgazebo11-dev
 
 # Copy and build ROS2 packages inside the workspace
-#TODO: instead of COPY, clone https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros_unity_integration/ros2_packages
-#! This might not be necessary, since we have the navigation package for Unity
-RUN mkdir /xplorer_ws/src -p
-COPY xplorer_ws/src xplorer_ws/src
-RUN cd /xplorer_ws && \
+RUN mkdir ./xplorer_ws/src -p
+COPY xplorer_ws/src ./xplorer_ws/src
+RUN cd ./xplorer_ws && \
     git clone https://github.com/robo-friends/m-explore-ros2.git src/m-explore-ros2 --branch main && \
     git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git src/ROS-TCP-Endpoint --branch main-ros2 && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
@@ -36,7 +46,7 @@ COPY ros_entrypoint.sh /ros_entrypoint.sh
 
 # Sources ROS on every new terminal automatically
 RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc && \
-    echo '. /xplorer_ws/install/setup.bash' >> ~/.bashrc
+    echo '. ${WORKDIR}/xplorer_ws/install/setup.bash' >> ~/.bashrc
 
 # Use dos2unix to convert the line endings, remove dos2unix and wget, then clean up files created by apt-get
 RUN dos2unix /ros_entrypoint.sh && apt-get --purge remove -y dos2unix wget && rm -rf /var/lib/apt/lists/*
