@@ -10,6 +10,9 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
+    ## network_mode and ipc required for integration with real robot (UNIX only)
+    # network_mode: host
+    # ipc: host
 
   rostcp:
     # ROS-Unity integration node
@@ -23,19 +26,20 @@ services:
     ports:
       - "10000:10000"
       - "5005:5005"
-
-    gazebo:
-      # Gazebo simulation + rviz nodes
-      container_name: gazebo
-      build: .
-      command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
-      privileged: true
-      env_file:
-        - environment.env
-      volumes:
-        - xplorervolume:/workspaces
-        - /tmp/.X11-unix:/tmp/.X11-unix
-      runtime: nvidia
+    ## network_mode and ipc required for integration with real robot (UNIX only)
+    # network_mode: host
+    # ipc: host
+  gazebo:
+    # Gazebo simulation + rviz nodes
+    container_name: gazebo
+    build: .
+    command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
+    privileged: true
+    env_file:
+      - environment.env
+    volumes:
+      - xplorervolume:/workspaces
+      - /tmp/.X11-unix:/tmp/.X11-unix
 
 volumes:
   xplorervolume: # Fixes Linux + Docker GUI problems
