@@ -9,6 +9,7 @@
 - [Running the project](#running-the-project)
   - [Detached mode](#detached-mode)
   - [Opening a new terminal inside a container](#opening-a-new-terminal-inside-a-container)
+  - [Resume exploration](#resume-exploration)
 - [Unity](#unity)
 
 
@@ -132,6 +133,16 @@ You can `docker exec` into any of the containers and run `ros2` commands from th
 ```bash
 docker exec -it explore bash
 ```
+
+## Resume exploration
+
+Sometimes the `explore` node will stop exploration, reporting that there are no more frontiers. This can happen when the simulation takes too long to launch. To resume exploration, `exec` into a container and run the following command:
+
+```bash
+ros2 topic pub /explore/resume std_msgs/Bool '{data: true}' -1
+```
+
+This publishes a single message to the `/explore/resume` topic, toggling the exploration back on. If the exploration keeps stopping, remove the `-1` so it is constantly resumed.
 
 #  Unity
 
