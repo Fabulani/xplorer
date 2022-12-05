@@ -1,4 +1,4 @@
-version: '2'
+version: '2.4'
 
 services:
   explore:
@@ -10,6 +10,9 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
+    ## network_mode and ipc required for integration with real robot (UNIX only)
+    # network_mode: host
+    # ipc: host
 
   rostcp:
     # ROS-Unity integration node
@@ -23,7 +26,9 @@ services:
     ports:
       - "10000:10000"
       - "5005:5005"
-
+    ## network_mode and ipc required for integration with real robot (UNIX only)
+    # network_mode: host
+    # ipc: host
   gazebo:
     # Gazebo simulation + rviz nodes
     container_name: gazebo
@@ -34,6 +39,7 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
+      - /tmp/.X11-unix:/tmp/.X11-unix
 
 volumes:
   xplorervolume: # Fixes Linux + Docker GUI problems
