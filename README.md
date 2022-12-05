@@ -10,6 +10,7 @@
   - [Detached mode](#detached-mode)
   - [Opening a new terminal inside a container](#opening-a-new-terminal-inside-a-container)
   - [Resume exploration](#resume-exploration)
+  - [Changing the Gazebo map](#changing-the-gazebo-map)
 - [Unity](#unity)
 
 
@@ -143,6 +144,26 @@ ros2 topic pub /explore/resume std_msgs/Bool '{data: true}' -1
 ```
 
 This publishes a single message to the `/explore/resume` topic, toggling the exploration back on. If the exploration keeps stopping, remove the `-1` so it is constantly resumed.
+
+## Changing the Gazebo map
+
+To change the map loaded in Gazebo, open `docker-compose.yml` and look for the `gazebo` service. There, under the `command`, change the last part of the path in the `world:=` parameter with one of the following:
+
+- empty_world.world
+- turtlebot3_world.world
+- turtlebot3_house.world
+- turtlebot3_dqn_stage1.world
+- turtlebot3_dqn_stage2.world
+- turtlebot3_dqn_stage3.world
+- turtlebot3_dqn_stage4.world
+
+For example, to change it to the `turtlebot3_house.world` world, the final command would look like this:
+
+```docker
+command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True world:=/opt/ros/galactic/share/turtlebot3_gazebo/worlds/turtlebot3_house.world
+```
+
+**NOTE:** this will load the map without spawning the robot.
 
 #  Unity
 
