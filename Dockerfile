@@ -3,13 +3,11 @@ FROM osrf/ros:galactic-desktop
 # UNIX username
 ENV USER=xplorer
 
-# Working directory
-ENV WORKDIR=/home/${USER}/src/
-
 # Add new user and create a home directory for him (attempt at fixing WSL2 lag)
 RUN useradd --create-home --shell /bin/bash ${USER}
 
 # Set working directory
+ENV WORKDIR=/home/${USER}/src/
 WORKDIR ${WORKDIR}
 
 # ROS distribution

@@ -29,6 +29,7 @@ services:
     ## network_mode and ipc required for integration with real robot (UNIX only)
     # network_mode: host
     # ipc: host
+
   gazebo:
     # Gazebo simulation + rviz nodes
     container_name: gazebo
