@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1ca24d3d-21d3-5694-ea71-c096160dff9d}</ProjectGuid>
+    <ProjectGuid>{37271e93-5f8d-fc03-0e0a-f6063c0d908c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>SteamVR_Editor</AssemblyName>
@@ -36,17 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_AutoEnableVR_2018to2019.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_Editor.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_UnitySettingsWindow.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_AutoEnableVR_5.4to2018.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_UpdateModeEditor.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_Preferences.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
-     <Compile Include="Assets\SteamVR\Editor\SteamVR_AutoEnableVR_2019plus.cs" />
-     <None Include="Assets\SteamVR\Editor\SteamVR_Editor.asmdef" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_AutoEnableVR_2018to2019.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_Editor.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_UnitySettingsWindow.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_Update.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_AutoEnableVR_5.4to2018.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_UpdateModeEditor.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_Preferences.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
+     <Compile Include="Assets\XR\SteamVR\Editor\SteamVR_AutoEnableVR_2019plus.cs" />
+     <None Include="Assets\XR\SteamVR\Editor\SteamVR_Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -306,40 +306,40 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Assets\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Assets\XR\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.collab-proxy@1.17.6\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -723,30 +723,30 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenVR">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{c8d9dee9-fd0f-9dfd-4eef-4dcd139590ce}</Project>
+      <Project>{59867822-7713-bfae-e48b-9b9ba910d1ee}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
   </ItemGroup>

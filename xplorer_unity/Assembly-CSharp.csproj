@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{cfe7834a-ad1c-6583-f468-da82d8342a1b}</ProjectGuid>
+    <ProjectGuid>{9d40b7d5-2236-b5c6-1418-71840ae95cfc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -39,13 +39,18 @@
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\ObjectPoseServiceRequest.cs" />
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\PositionServiceResponse.cs" />
      <Compile Include="Assets\FreeCam.cs" />
+     <Compile Include="Assets\Northern Lights Pack\Scripts\FollowTarget.cs" />
      <Compile Include="Assets\RosPublisherExample.cs" />
      <Compile Include="Assets\RosSubscriberExample.cs" />
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\ObjectPoseServiceResponse.cs" />
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\msg\UnityColorMsg.cs" />
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\msg\PosRotMsg.cs" />
      <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\PositionServiceRequest.cs" />
-     <None Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Tunneling Vignette\TunnelingVignette.shader" />
+     <None Include="Assets\Northern Lights Pack\URP Specific\_README.txt" />
+     <None Include="Assets\Northern Lights Pack\Standard Pipeline Specific\_README.txt" />
+     <None Include="Assets\Northern Lights Pack\Standard Pipeline Specific\Shaders\Northern Lights.shader" />
+     <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
+     <None Include="Assets\Northern Lights Pack\README.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -293,16 +298,16 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Assets\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Assets\XR\SteamVR\Input\Plugins\JSON.NET\Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -677,210 +682,200 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.ROSTCPConnector">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenVR">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenVR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.MixedReality.OpenXR.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Microsoft.MixedReality.OpenXR.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Microsoft.MixedReality.OpenXR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.Visualizations.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.Visualizations.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.Visualizations.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.ROSTCPConnector.Messages">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.Messages.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.Messages.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.ARSubsystems.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.ARSubsystems.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Oculus.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.ARFoundation.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.ARFoundation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.ROSTCPConnector.MessageGeneration">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.MessageGeneration.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.MessageGeneration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.ROSTCPConnector.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.ROSTCPConnector.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Robotics.Visualizations">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Robotics.Visualizations.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Robotics.Visualizations.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.MixedReality.OpenXR">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Microsoft.MixedReality.OpenXR.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Microsoft.MixedReality.OpenXR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenVR.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenVR.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenVR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Environments">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Oculus">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation">
-        <HintPath>C:\Git\imlex\xplorer\xplorer_unity\Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
+        <HintPath>C:\Git\imlex\backup_xplorer\xplorer_unity_backup22-12-08\Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{7c1f689c-107f-7331-2f79-9e7ebcbfa55a}</Project>
+      <Project>{0f3b5074-6acf-a5f8-ae53-3fd6bc487ab3}</Project>
       <Name>SteamVR_Input_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{5375501d-b2c1-5cc4-13e0-8223c9dd7fb7}</Project>
+      <Project>{06d8f05e-6726-f599-63f0-6b0aad4cbc6e}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{1ca24d3d-21d3-5694-ea71-c096160dff9d}</Project>
+      <Project>{37271e93-5f8d-fc03-0e0a-f6063c0d908c}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{f9d497fb-957d-dc96-a496-81a8fca3d2af}</Project>
-      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
+    <ProjectReference Include="SteamVR.csproj">
+      <Project>{59867822-7713-bfae-e48b-9b9ba910d1ee}</Project>
+      <Name>SteamVR</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{669f22f6-b053-bf6f-e942-d68648af650d}</Project>
+      <Project>{634193f6-c92c-aa07-f8d2-399a0155decf}</Project>
       <Name>SteamVR_Actions</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR.csproj">
-      <Project>{c8d9dee9-fd0f-9dfd-4eef-4dcd139590ce}</Project>
-      <Name>SteamVR</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
