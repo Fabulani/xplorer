@@ -190,6 +190,10 @@ Furthermore, we used a VR scene to visualize data from the robot. The following 
 
 Made with Unity editor version `2021.3.14f1`.
 
+Assets used:
+- [Skybox Series Free](https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633)
+- [Northern Lights Pack](https://assetstore.unity.com/packages/vfx/particles/environment/northern-lights-pack-86980)
+
 # Thanks
 
 We would like to sincerely express our appreciation to Karelics for the support they’ve sent our way working on this project.
