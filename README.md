@@ -4,7 +4,7 @@
  __Autonomous Exploration with Virtual Reality Visualization__  
 The XploreR project is the result of eight weeks of work in cooperation with the Karelics company for the Robotics and XR class in University of Eastern Finland, lectured by Professor Ilkka Jormanainen. The aim of this project was to integrate an autonomous exploration algorithm in a SLAM-equipped robot and link it to a Virtual Reality (VR) environment, allowing visualization of the robot’s published data (e.g., the map, pose, path, etc.).
 
-[![IMAGE_ALT](https://img.youtube.com/vi/-82iKdRaAh8/0.jpg)](https://youtu.be/-82iKdRaAh8)
+[![IMAGE_ALT](https://img.youtube.com/vi/dvud4rTNY1E/0.jpg)](https://youtu.be/dvud4rTNY1E)
 
  [Artemis Georgopoulo](https://github.com/artemisge), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
 
