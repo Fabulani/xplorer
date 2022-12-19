@@ -2,11 +2,14 @@
 
 
  __Autonomous Exploration with Virtual Reality Visualization__  
-This project is the result of eight weeks of work with the Karelics company, under the supervision of our Robotics + XR subject Professor Mr. Ilkka Jormanainen, University of Eastern Finland. The aim of this project was to build integrate a autonomous exploration algorithm in a SLAM-equipped robot, and link it to a VR (Virtual Reality) environment that allows visualization of the robot’s published data (e.g., the map, pose, path, etc.). 
+The XploreR project is the result of eight weeks of work in cooperation with the Karelics company for the Robotics and XR class in University of Eastern Finland, lectured by Professor Ilkka Jormanainen. The aim of this project was to integrate an autonomous exploration algorithm in a SLAM-equipped robot and link it to a Virtual Reality (VR) environment, allowing visualization of the robot’s published data (e.g., the map, pose, path, etc.).
+
+[![IMAGE_ALT](https://img.youtube.com/vi/-82iKdRaAh8/0.jpg)](https://youtu.be/-82iKdRaAh8)
 
  [Artemis Georgopoulo](https://github.com/artemisge), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
 
-__[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf)&nbsp;/ [Video](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.mp4)&nbsp;/ [Presentation](https://tom94.net/data/publications/mueller22instant/mueller22instant-gtc.mp4)&nbsp;__
+__[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_report.pdf)&nbsp;/ [Video](https://youtu.be/dvud4rTNY1E)&nbsp;/ [Presentation](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_presentation.pptx)&nbsp;__
+
 
 # Table of content
 
