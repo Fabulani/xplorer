@@ -8,7 +8,7 @@ The XploreR project is the result of eight weeks of work in cooperation with the
 
  [Artemis Georgopoulo](https://github.com/artemisge), [Fabiano Junior Maia Manschein](https://github.com/Fabulani), [Yasmina Feriel Djelil](https://github.com/YasminaDjelil), [Shani Israelov](https://github.com/shani1610)  
 
-__[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_report.pdf)&nbsp;/ [Video](https://youtu.be/dvud4rTNY1E)&nbsp;/ [Presentation](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_presentation.pptx)&nbsp;__
+__[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_report.pdf)&nbsp;/ [Video](https://youtu.be/dvud4rTNY1E)&nbsp;/ [Presentation](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_presentation.pdf)&nbsp;__
 
 
 # Table of content
