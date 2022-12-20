@@ -2,7 +2,7 @@
 
 
  __Autonomous Exploration with Virtual Reality Visualization__  
-The XploreR project is the result of eight weeks of work in cooperation with the Karelics company for the Robotics and XR class in University of Eastern Finland, lectured by Professor Ilkka Jormanainen. The aim of this project was to integrate an autonomous exploration algorithm in a SLAM-equipped robot and link it to a Virtual Reality (VR) environment, allowing visualization of the robot’s published data (e.g., the map, pose, path, etc.).
+The XploreR project is the result of eight weeks of work in cooperation with the [Karelics](https://karelics.fi) company for the Robotics and XR class in University of Eastern Finland, lectured by Professor Ilkka Jormanainen. The aim of this project was to integrate an autonomous exploration algorithm in a SLAM-equipped robot and link it to a Virtual Reality (VR) environment, allowing visualization of the robot’s published data (e.g., the map, pose, path, etc.).
 
 [![IMAGE_ALT](https://img.youtube.com/vi/dvud4rTNY1E/0.jpg)](https://youtu.be/dvud4rTNY1E)
 
@@ -222,7 +222,7 @@ Current tasks and planned features include:
 
 # Thanks
 
-We would like to sincerely express our appreciation to Karelics for the support they’ve sent our way working on this project.
+We would like to sincerely express our appreciation to [Karelics](https://karelics.fi) for the support they’ve sent our way working on this project.
 
 This project makes use of a number of open source libraries, including:
 * [m-explore-ros2](https://github.com/robo-friends/m-explore-ros2) for autonomous exploration on ROS2
