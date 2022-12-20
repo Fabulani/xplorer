@@ -1,2 +1,0 @@
-find_package(ament_cmake_nose REQUIRED)
-ament_add_nose_test(${PROJECT_NAME}_test_demo+publisher test_demo_publisher.py)

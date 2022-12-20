@@ -1,8 +1,0 @@
-# Goal
-string dummy_goal
----
-# Result
-std_msgs/Empty dummy_result
----
-# Feedback
-float32 dummy_feedback
