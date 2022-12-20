@@ -25,6 +25,8 @@ __[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](ht
   - [Resume exploration](#resume-exploration)
   - [Changing the Gazebo map](#changing-the-gazebo-map)
 - [Unity](#unity)
+- [Branches](#branches)
+- [Todo list](#todo-list)
 - [Thanks](#thanks)
 
 # Requirements
@@ -32,7 +34,7 @@ __[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](ht
 To fully run the project, the following is required:
 - Docker (and docker-compose): recommended to install Docker Desktop
 - (Windows) VcXsrv Windows X Server: https://sourceforge.net/projects/vcxsrv/ required for turtlebot3 gazebo simulation
-- Unity 2020+: for the Unity VR scene
+- Unity 2020+: for the Unity scene
 
 
 # First-time setup
@@ -61,8 +63,9 @@ DISPLAY=10.143.144.69:0
 
 ROS_DISTRO=galactic
 ROS_DOMAIN_ID=1
-TURTLEBOT3_MODEL=waffle
-GAZEBO_MODEL_PATH=/opt/ros/galactic/share/turtlebot3_gazebo/models
+TURTLEBOT3_MODEL=burger
+GAZEBO_MODEL_PATH=/opt/ros/galactic/share/turtlebot3_gazebo/models/
+GAZEBO_WORLD_PATH=/opt/ros/galactic/share/turtlebot3_gazebo/worlds/
 
 COMPOSE_DOCKER_CLI_BUILD=0
 ```
@@ -196,6 +199,25 @@ Made with Unity editor version `2021.3.14f1`.
 Assets used:
 - [Skybox Series Free](https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633)
 - [Northern Lights Pack](https://assetstore.unity.com/packages/vfx/particles/environment/northern-lights-pack-86980)
+
+# Branches
+
+The following branches are available:
+- The `main` branch contains the most up-to-date working version of the project. Here, the Unity scene doesn't contain VR content.
+- The `vr` branch contains the Unity VR scene.
+- The `unity-pc-backup` branch is a backup for the Unity scene without VR.
+
+The Unity scene without VR has only the ROS2 integration packages: communication and visualization. It's purpose is to be used with mouse and keyboard.
+
+# Todo list
+
+Current tasks and planned features include:
+- [ ] Change the VR scene to a 3D map view, allowing the user to see the map in more detail.
+- [ ] Add user interaction to both the 2D and 3D maps, where user interaction (tap, touch) could be used to switch from autonomous exploration to manual control, allowing the user to set the navigation target point.
+- [ ] Add new autonomous exploration strategy implementations, e.g. Next-Best-View exploration, and compare the different strategies.
+- [ ] Add new Gazebo worlds for testing autonomous exploration (e.g., a labyrinth).
+- [ ] Remake the VR scene with up-to-date XR plugins, and allow interchangeable use between keyboard+mouse and VR headset.
+- [ ] Add a Augmented Reality (AR) scene for visualizing ROS2 data in a phone app with AR (e.g., using a QR code).
 
 # Thanks
 
