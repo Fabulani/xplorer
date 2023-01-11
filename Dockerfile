@@ -29,6 +29,9 @@ RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb
     && wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add - \
     && apt-get update -y && apt-get install -y gazebo11 libgazebo11-dev
 
+# Copy gazebo worlds
+COPY ./worlds /opt/ros/galactic/share/turtlebot3_gazebo/worlds/
+
 # Copy and build ROS2 packages inside the workspace
 RUN mkdir ./xplorer_ws/src -p
 COPY xplorer_ws/src ./xplorer_ws/src
