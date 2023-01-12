@@ -14,6 +14,7 @@ __[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](ht
 # Table of content
 
 - [XploreR](#xplorer)
+- [Table of content](#table-of-content)
 - [Requirements](#requirements)
 - [First-time setup](#first-time-setup)
   - [Windows](#windows)
@@ -23,7 +24,8 @@ __[Project page](https://github.com/Fabulani/xplorer)&nbsp;/ [Project report](ht
   - [Detached mode](#detached-mode)
   - [Opening a new terminal inside a container](#opening-a-new-terminal-inside-a-container)
   - [Resume exploration](#resume-exploration)
-  - [Changing the Gazebo map](#changing-the-gazebo-map)
+  - [Changing the Gazebo world](#changing-the-gazebo-world)
+  - [Creating new worlds](#creating-new-worlds)
 - [Unity](#unity)
 - [Branches](#branches)
 - [Todo list](#todo-list)
@@ -129,6 +131,8 @@ If this is your first time here, it might take a couple minutes to build the ima
 
 To shutdown, use `CTRL+C` in the terminal running the containers.
 
+**NOTE:** often, the robot gets stuck at the start of the simulation. To fix this, go to Rviz and give it a `Nav2 Pose Goal` (make the robot move and map a bit). If the `explore` node considered the exploration done at the start of the simulation, follow the instruction in [Resume exploration](#resume-exploration).
+
 ## Detached mode
 
 Alternatively, you can run the containers in detached mode:
@@ -161,10 +165,21 @@ ros2 topic pub /explore/resume std_msgs/Bool '{data: true}' -1
 
 This publishes a single message to the `/explore/resume` topic, toggling the exploration back on. If the exploration keeps stopping, remove the `-1` so it is constantly resumed.
 
-## Changing the Gazebo map
+## Changing the Gazebo world
 
-To change the map loaded in Gazebo, open `docker-compose.yml` and look for the `gazebo` service. There, under the `command`, change the last part of the path in the `world:=` parameter with one of the following:
+The map is set by default to `labyrinthe.world`, a complex labyrinthe world created for this project. It is separated in 4 zones, with a central start area:
+- red: longer hallways and a spiral
+- blue: simples long hallways, a path with many tight corners, and a trident shaped path
+- green: furniture room with 2 stairs, a series of 3 small tables, and a big table
+- purple: highly chaotic and ramdomly placed walls
 
+All zones are connected to their neighbor zones and the central area.
+
+![alt text](./docs/labyrinthe-model.jpeg "Labyrinthe world")
+
+To change the world loaded in Gazebo, open `docker-compose.yml` and look for the `gazebo` service. There, under the `command`, change the last part of the path in the `world:=` parameter with one of the following (or any worlds added to the `worlds` folder):
+
+- labyrinthe.world
 - empty_world.world
 - turtlebot3_world.world
 - turtlebot3_house.world
@@ -176,10 +191,32 @@ To change the map loaded in Gazebo, open `docker-compose.yml` and look for the `
 For example, to change it to the `turtlebot3_house.world` world, the final command would look like this:
 
 ```docker
-command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True world:=/opt/ros/galactic/share/turtlebot3_gazebo/worlds/turtlebot3_house.world
+command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True world:=/opt/ros/galactic/share/turtlebot3_gazebo/worlds/turtlebot3_world.world
 ```
 
-**NOTE:** this will load the map without spawning the robot.
+**NOTE:** except for the labyrinthe, this will load the world without spawning the robot. To add a robot, go to the `Insert` tab and add a `turtlebot` to the world.
+
+## Creating new worlds
+
+The `gazebo` container can be used to create new worlds and models. Follow the following steps:
+1. Set one of the `.world` worlds as described in [Changing the Gazebo map](#changing-the-gazebo-map) to use it as a base/template and spin-up the `gazebo` container
+2. In the Gazebo simulation, click on the `Edit` tab in the toolbar, then `Building editor`
+3. Create your model (warning: you can't save and edit it later!)
+4. Save the model somewhere easy to find in the container file system (e.g., the `root` folder)
+5. (requires the `Docker` extension on VS Code) Go to VSCode, access the Docker tab, and search for the model file you saved. Download it to the `models` folder
+6. Exit the `Building editor`
+7. Go to the `Insert` tab and click on `Add Path`. Search for the folder containing your model's folder and add it
+8. Now you can add your model to the world. Add any other models as desired.
+9. Once done, go to `File` and `Save world as`. Save it in a easy-to-find folder (e.g., root) as a `.world` file
+10. Repeat step `5.`, but for the `.world` file, and save it in the `worlds` folder.
+
+With this, your world is available for use by following the [Changing the Gazebo map](#changing-the-gazebo-map) subsection. All models saved to the `models` folder will also be available in the container next to the `turtlebot` models.
+
+**NOTE:** new files in the `models` and `worlds` folders will require the container to be rebuilt with:
+
+```bash
+docker-compose up --build
+```
 
 #  Unity
 
@@ -215,7 +252,7 @@ Current tasks and planned features include:
 - [ ] Change the VR scene to a 3D map view, allowing the user to see the map in more detail.
 - [ ] Add user interaction to both the 2D and 3D maps, where user interaction (tap, touch) could be used to switch from autonomous exploration to manual control, allowing the user to set the navigation target point.
 - [ ] Add new autonomous exploration strategy implementations, e.g. Next-Best-View exploration, and compare the different strategies.
-- [ ] Add new Gazebo worlds for testing autonomous exploration (e.g., a labyrinth).
+- [X] Add new Gazebo worlds for testing autonomous exploration (e.g., a labyrinth).
 - [ ] Remake the VR scene with up-to-date XR plugins, and allow interchangeable use between keyboard+mouse and VR headset.
 - [ ] Add a Augmented Reality (AR) scene for visualizing ROS2 data in a phone app with AR (e.g., using a QR code).
 - [ ] Add the Unity project `./xplorer_unity` to Git LFS.

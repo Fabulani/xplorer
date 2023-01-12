@@ -10,9 +10,9 @@ services:
       - environment.env
     volumes:
       - xplorervolume:/workspaces
-    ## network_mode and ipc required for integration with real robot (UNIX only)
-    # network_mode: host
-    # ipc: host
+  ## network_mode and ipc required for integration with real robot (UNIX only)
+  # network_mode: host
+  # ipc: host
 
   rostcp:
     # ROS-Unity integration node
@@ -26,15 +26,15 @@ services:
     ports:
       - "10000:10000"
       - "5005:5005"
-    ## network_mode and ipc required for integration with real robot (UNIX only)
-    # network_mode: host
-    # ipc: host
+  ## network_mode and ipc required for integration with real robot (UNIX only)
+  # network_mode: host
+  # ipc: host
 
   gazebo:
     # Gazebo simulation + rviz nodes
     container_name: gazebo
     build: .
-    command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
+    command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True world:=/opt/ros/galactic/share/turtlebot3_gazebo/worlds/labyrinthe.world
     privileged: true
     env_file:
       - environment.env

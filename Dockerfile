@@ -1,5 +1,7 @@
 FROM osrf/ros:galactic-desktop
 
+### === INITIAL SETUP === ###
+
 # UNIX username
 ENV USER=xplorer
 
@@ -12,6 +14,9 @@ WORKDIR ${WORKDIR}
 
 # ROS distribution
 ENV ROS_DISTRO=galactic
+
+
+### === INSTALLS === ###
 
 # Update apt so that new packages can be installed properly. wget for gazebo, dos2unix for line endings fix
 RUN apt-get update && apt-get install -y wget dos2unix \
@@ -39,12 +44,22 @@ RUN cd ./xplorer_ws && \
     rosdep install --from-paths . --ignore-src -r -y && \
     colcon build
 
+
+### === FINAL SETUP === ###
+
+# Copy gazebo worlds and models
+COPY ./worlds /opt/ros/galactic/share/turtlebot3_gazebo/worlds/
+COPY ./models /opt/ros/galactic/share/turtlebot3_gazebo/models/
+
 # Replace ros_entrypoint.sh
 COPY ros_entrypoint.sh /ros_entrypoint.sh
 
 # Sources ROS on every new terminal automatically
 RUN echo '. /opt/ros/$ROS_DISTRO/setup.sh' >> ~/.bashrc && \
     echo '. ${WORKDIR}/xplorer_ws/install/setup.bash' >> ~/.bashrc
+
+
+### === CLEANUP === ###
 
 # Use dos2unix to convert the line endings, remove dos2unix and wget, then clean up files created by apt-get
 RUN dos2unix /ros_entrypoint.sh && apt-get --purge remove -y dos2unix wget && rm -rf /var/lib/apt/lists/*
