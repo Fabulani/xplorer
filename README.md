@@ -171,7 +171,7 @@ The map is set by default to `labyrinthe.world`, a complex labyrinthe world crea
 - red: longer hallways and a spiral
 - blue: simple long hallways, a path with many tight corners, and a trident shaped path
 - green: furniture room with 2 stairs, a series of 3 small tables, and a big table
-- purple: highly chaotic and ramdomly placed walls
+- purple: highly chaotic and randomly placed walls
 
 All zones are connected to their neighbor zones and the central area.
 
@@ -196,6 +196,8 @@ command: ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True world:=/op
 
 **NOTE:** except for the labyrinthe, this will load the world without spawning the robot. To add a robot, go to the `Insert` tab and add a `turtlebot` to the world.
 
+**NOTE2:** the labyrinth is intentionally called labyrinthe, as it was made in France.
+
 ## Creating new worlds
 
 The `gazebo` container can be used to create new worlds and models. Follow the following steps:
@@ -207,7 +209,7 @@ The `gazebo` container can be used to create new worlds and models. Follow the f
 6. Exit the `Building editor`
 7. Go to the `Insert` tab and click on `Add Path`. Search for the folder containing your model's folder and add it
 8. Now you can add your model to the world. Add any other models as desired.
-9. Once done, go to `File` and `Save world as`. Save it in a easy-to-find folder (e.g., root) as a `.world` file
+9. Once done, go to `File` and `Save world as`. Save it in an easy-to-find folder (e.g., root) as a `.world` file
 10. Repeat step `5.`, but for the `.world` file, and save it in the `worlds` folder.
 
 With this, your world is available for use by following the [Changing the Gazebo map](#changing-the-gazebo-map) subsection. All models saved to the `models` folder will also be available in the container next to the `turtlebot` models.
