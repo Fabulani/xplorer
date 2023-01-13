@@ -169,7 +169,7 @@ This publishes a single message to the `/explore/resume` topic, toggling the exp
 
 The map is set by default to `labyrinthe.world`, a complex labyrinthe world created for this project. It is separated in 4 zones, with a central start area:
 - red: longer hallways and a spiral
-- blue: simples long hallways, a path with many tight corners, and a trident shaped path
+- blue: simple long hallways, a path with many tight corners, and a trident shaped path
 - green: furniture room with 2 stairs, a series of 3 small tables, and a big table
 - purple: highly chaotic and ramdomly placed walls
 
