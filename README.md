@@ -258,6 +258,7 @@ Current tasks and planned features include:
 - [ ] Remake the VR scene with up-to-date XR plugins, and allow interchangeable use between keyboard+mouse and VR headset.
 - [ ] Add a Augmented Reality (AR) scene for visualizing ROS2 data in a phone app with AR (e.g., using a QR code).
 - [ ] Add the Unity project `./xplorer_unity` to Git LFS.
+- [ ] Fix the video previews so they look like video players instead of a static image.
 
 # Thanks
 
