@@ -2,7 +2,7 @@
 
 In partnership with [Karelics Oy](https://karelics.fi), we integrated an autonomous exploration algorithm into their existing robotic solution using ROS2 and Docker. Additionally, we connected the robot to the Unity game engine and demonstrated the visualization of robot data (pose, generated map, autonomous exploration goals) in a VR scene that we created.
 
-__[Artemis Georgopoulou](https://github.com/artemisge)&nbsp; |&nbsp; [Fabiano Manschein](https://github.com/fabulani)&nbsp; |&nbsp; [Shani Israelov](https://github.com/shani1610)&nbsp; |&nbsp; [Yasmina Feriel Djelil](https://github.com/YasminaDjelil)__ (equal contribution)
+__[Artemis Georgopoulou](https://github.com/artemisge)&nbsp; |&nbsp; [Fabiano Manschein](https://github.com/fabulani)&nbsp; |&nbsp; [Shani Israelov](https://github.com/shani1610)&nbsp; |&nbsp; [Yasmina Feriel Djelil](https://djelilyasminaferiel.notion.site/Djelil-Yasmina-Feriel-acca1fb6f21841baaa123e9621f8db3b)__ (equal contribution)
 
 __[Code](https://github.com/Fabulani/xplorer)&nbsp; |&nbsp; [Blog](https://karelics.fi/xplorer-autonomous-exploration-with-virtual-reality-visualization/)&nbsp; |&nbsp; [Video](https://youtu.be/dvud4rTNY1E)&nbsp;&nbsp; |&nbsp; [Presentation](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_presentation.pdf)&nbsp; |&nbsp; [Report](https://github.com/Fabulani/xplorer/blob/main/docs/XploreR_report.pdf)&nbsp;__
 
