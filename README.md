@@ -187,6 +187,11 @@ All zones are connected to their neighbor zones and the central area.
 
 ![Labyrinthe World](./docs/labyrinthe-model.jpeg "Labyrinthe world")
 
+[![Labyrinthe Test Run](http://markdown-videos-api.jorgenkh.no/youtube/eFKOe1h7b38?width=720&height=480&duration=500)](https://youtu.be/eFKOe1h7b38)
+
+
+https://youtu.be/eFKOe1h7b38
+
 To change the world loaded in Gazebo, open `docker-compose.yml` and look for the `gazebo` service. There, under the `command`, change the last part of the path in the `world:=` parameter with one of the following (or any worlds added to the `worlds` folder):
 
 - labyrinthe.world
